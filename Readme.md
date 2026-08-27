@@ -84,7 +84,7 @@ Crear un archivo .env dentro de BackEnd con las variables necesarias para ejecut
 
 4. Ejecutar el backend
 ```bash
-npm start
+npm run server
 ```
 
 Si el proyecto utiliza otro script definido en package.json, ejecutar el comando correspondiente.
