@@ -10,7 +10,7 @@ const ConexionBD = new sql.Database('./src/db/data.db', (error) => {
     else{
         console.log('Se Creo la Base de Datos Correctamente ✅')
         // --> .RUN Para ejecutar una consulta SQL que crea la tabla Planetas si no existe
-        ConexionBD.run(
+        ConexionBD.exec(
             // --> Consulta SQL para crear la tabla Planetas con los campos ID_Planeta, Nombre, Descripcion y Dis
             `
                 CREATE TABLE IF NOT EXISTS Planetas(
@@ -18,7 +18,7 @@ const ConexionBD = new sql.Database('./src/db/data.db', (error) => {
                     Nombre TEXT NOT NULL,
                     Descripcion TEXT NOT NULL,
                     Dis TEXT NOT NULL
-                ),
+                );
                 CREATE TABLE IF NOT EXISTS Usuarios(
                     ID_Primary INTEGER PRIMARY KEY AUTOINCREMENT,
                     User TEXT NOT NULL,

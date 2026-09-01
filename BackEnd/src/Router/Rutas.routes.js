@@ -17,7 +17,7 @@ Rutas.put('/Modificar/:ID_Planeta',RegistroDatos.ModificarDatos)
 // --> Rutas para Eliminar los Datos de la Tabla Planetas
 Rutas.delete('/Eliminar/:ID_Planeta',RegistroDatos.EliminarDatos)
 
-Rutas.post('/Login',Login)
+Rutas.post('/c',Login.Login)
 
 // --> Exporta las rutas para que puedan ser utilizadas en otros archivos
 module.exports=Rutas;
