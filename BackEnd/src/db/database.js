@@ -1,5 +1,4 @@
 const sql = require('sqlite3').verbose()
-const path = require('path')
 const { ERROR } = require('sqlite3')
 
 //--> Crea la Base de Datos y la Tabla Planetas si no existen
@@ -19,13 +18,19 @@ const ConexionBD = new sql.Database('./src/db/data.db', (error) => {
                     Nombre TEXT NOT NULL,
                     Descripcion TEXT NOT NULL,
                     Dis TEXT NOT NULL
+                ),
+                CREATE TABLE IF NOT EXISTS Usuarios(
+                    ID_Primary INTEGER PRIMARY KEY AUTOINCREMENT,
+                    User TEXT NOT NULL,
+                    Password TEXT NOT NULL,
+                    Type TEXT NOT NULL
                 )
             `,(error)=>{
                 if(error){
-                    console.error('No se Logro crear la Tabla Planetiños ❌',error.message)
+                    console.error('No se Logro crear la Tabla Planetes o Usuaries ❌',error.message)
                 }
                 else{
-                    console.log('Tabla Planetas creada con exito ✅')
+                    console.log('Tabla Planetas E Usuarios creada con exito ✅')
                 }
             }
         )
