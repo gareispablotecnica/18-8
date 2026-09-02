@@ -1,11 +1,13 @@
 // rfce + Enter 
 import React from 'react'
-import Encabezado from './Components/Home/Encabezado'
+import Tarjetas from './Components/Tarjetas'
+// import Encabezado from './Components/Home/Encabezado'
 
 function App() {
   return (
     <>
-        <Encabezado />
+        {/* <Encabezado /> */}
+        <Tarjetas />
     </>
   )
 }
