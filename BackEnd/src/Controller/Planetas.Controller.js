@@ -17,9 +17,10 @@ const RegistroDatos = (req, res) => {
             // --> Código 500 porque hubo un error en el servidor al intentar registrar los datos
             return res.status(500).json({ error: 'Error al Registrar los Datos ❌' })
         }
+        console.log('Datos Registrados ✅')
         // --> Código 201 porque los datos se registraron correctamente
         return res.status(201).json({ Mensaje: 'Datos Registrados Correctamente ✅' })
-        console.log('Datos Registrados ✅')
+        
     })
 }
 

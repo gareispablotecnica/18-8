@@ -8,10 +8,9 @@ function Encabezado() {
         <header className='encabezado'>
             <img src={Logo} alt="" />
             <nav className='menu'>
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
+                <a href="">Registrar</a>
+                <a href="">Ver Planetas</a>
+                <a href="">Contactos</a>
             </nav>
         </header>
     </>

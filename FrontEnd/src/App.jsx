@@ -1,13 +1,12 @@
 // rfce + Enter 
 import React from 'react'
-import Tarjetas from './Components/Tarjetas'
-// import Encabezado from './Components/Home/Encabezado'
+import Layouts from './Components/Layouts'
+
 
 function App() {
   return (
     <>
-        {/* <Encabezado /> */}
-        <Tarjetas />
+      <Layouts />
     </>
   )
 }

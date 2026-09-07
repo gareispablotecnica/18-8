@@ -3,7 +3,7 @@ import React from 'react'
 // --> Dependencias
 import { useState, useEffect } from 'react'
 // ---> services/api.js --> metodo
-import { api } from '../Services/api'
+import { api } from '../../Services/api'
 
 
 function Tarjetas() {
