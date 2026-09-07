@@ -95,8 +95,6 @@ h2 { font-size: clamp(42px, 5.4vw, 76px); }
   .planet-grid { grid-template-columns: 1fr; } .planet-card { min-height: 295px; }
   .planets-section { padding: 85px 22px; } .site-footer { align-items: flex-start; flex-direction: column; padding: 28px 22px; } .footer-note { margin-left: 0 !important; }
 }
-@media (max-width: 430px) { .header-action { font-size: 0; } .header-action span { font-size: 18px; } h1 { font-size: 56px; } .solar-stage { right: -42%; width: 150vw; } }
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root {
   --fondo: #07090d;
@@ -712,5 +710,193 @@ img {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+
+
+
+
+
+.Planetes {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  padding: 0;
+}
+
+.Tarjeta {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding: 30px;
+
+  border: 1px solid var(--borde);
+  border-radius: 0;
+
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(112, 223, 209, 0.10),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #161d26,
+      #0e1219
+    );
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.Tarjeta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--verde),
+    transparent
+  );
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.Tarjeta::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: -80px;
+  right: -60px;
+
+  border-radius: 50%;
+  background: rgba(112, 223, 209, 0.08);
+  filter: blur(30px);
+
+  transition: transform 0.4s ease;
+}
+
+.Tarjeta:hover {
+  transform: translateY(-6px);
+  border-color: rgba(112, 223, 209, 0.65);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(112, 223, 209, 0.06);
+}
+
+.Tarjeta:hover::before {
+  opacity: 1;
+}
+
+.Tarjeta:hover::after {
+  transform: scale(1.4);
+}
+
+.Nombre {
+  position: relative;
+  z-index: 2;
+
+  margin: 0 0 14px;
+
+  color: var(--texto);
+
+  font-family: "Manrope", sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+
+  line-height: 1;
+  letter-spacing: -0.07em;
+}
+
+.Descripcion {
+  position: relative;
+  z-index: 2;
+
+  max-width: 270px;
+  margin: 0;
+
+  color: var(--texto-suave);
+
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+.Dis {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  width: fit-content;
+
+  margin-top: 22px;
+  padding-top: 14px;
+
+  border-top: 1px solid var(--borde);
+
+  color: var(--verde);
+
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.Dis::before {
+  content: "";
+
+  width: 5px;
+  height: 5px;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--naranja);
+
+  box-shadow:
+    0 0 8px rgba(255, 152, 98, 0.7);
+}
+
+@media (max-width: 900px) {
+  .Planetes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .Planetes {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .Tarjeta {
+    min-height: 290px;
+    padding: 25px;
+  }
+
+  .Nombre {
+    font-size: 30px;
   }
 }
