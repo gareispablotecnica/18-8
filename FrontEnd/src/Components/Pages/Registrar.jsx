@@ -27,6 +27,7 @@ function Registrar() {
                 Descripcion: '',
                 Dis: ''
             })
+            // ---> sweetalert mostrar el mensaje de Planeta Registrado
             console.log('Planeta registrado con éxito:', Registros.data)
         }
         catch (error) {
